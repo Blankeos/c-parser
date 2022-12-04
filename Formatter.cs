@@ -6,7 +6,7 @@ namespace CParser
             TokenType.BOOLEAN, TokenType.INT, TokenType.STRING, TokenType.CHAR, TokenType.FLOAT,
             TokenType.DOUBLE, TokenType.IF, TokenType.ELSE, TokenType.COMMA
         };
-        public static void ParseToFile(List<Token> tokens)
+        public static void ParseToFile(string path, List<Token> tokens, bool logTokens = false)
         {
             int indentCount = 0;
             List<string> lines = new List<string>();
@@ -64,11 +64,80 @@ namespace CParser
                     lines.Add(currentLine);
                     currentLine = "";
                 }
-                Console.WriteLine(ctoken);
             }
             if (currentLine != "") lines.Add(currentLine);
 
-            File.WriteAllLines("output_carlo.txt", lines);
+
+
+            if (logTokens)
+            {
+                List<Token> keywords = new List<Token>();
+                List<Token> symbols = new List<Token>();
+                List<Token> values = new List<Token>();
+
+                lines.Add("");
+                lines.Add($"// ============ Lexed ({tokens.Count}) tokens ============");
+                string row = "";
+                for (int i = 0; i < tokens.Count; i++)
+                {
+                    if (TokenConstants.KEYWORDS.Any(type => type == tokens[i].tokenType)) keywords.Add(tokens[i]);
+                    if (TokenConstants.SYMBOLS.Any(type => type == tokens[i].tokenType)) symbols.Add(tokens[i]);
+                    if (TokenConstants.VALUES.Any(type => type == tokens[i].tokenType)) values.Add(tokens[i]);
+
+                    row += tokens[i] + " ";
+                    if (i % 5 == 0 && i != 0)
+                    {
+                        lines.Add($"// {row}");
+                        row = "";
+                    }
+                }
+                lines.Add($"// {row}");
+
+                lines.Add("");
+                lines.Add($"// ============ Keywords ({keywords.Count}/{tokens.Count}) tokens ============");
+                for (int i = 0; i < keywords.Count; i++)
+                {
+                    lines.Add($"// {keywords[i].value}");
+                }
+
+                lines.Add("");
+                lines.Add($"// ============ Symbols ({symbols.Count}/{tokens.Count}) tokens ============");
+                row = "";
+                int interval = 0;
+                for (int i = 0; i < symbols.Count; i++)
+                {
+                    interval++;
+                    row += $"{symbols[i].value}\t";
+                    if (interval >= 10)
+                    {
+                        lines.Add($"// {row}");
+                        row = "";
+                        interval = 0;
+                    }
+                }
+
+                lines.Add($"// {row}");
+                lines.Add("");
+                lines.Add($"// ============ Values ({values.Count}/{tokens.Count}) tokens ============");
+                row = "";
+                // interval = 0;
+                for (int i = 0; i < values.Count; i++)
+                {
+                    lines.Add($"// {values[i].value}");
+                    // interval++;
+                    // row += $"{values[i].value}\t";
+                    // if (interval >= 10)
+                    // {
+                    //     row = "";
+                    //     interval = 0;
+                    // }
+                }
+                // lines.Add($"// {row}");
+
+
+            }
+
+            File.WriteAllLines(path, lines);
 
             // for (int i = 0; i < tokens.Count; i++)
             // {

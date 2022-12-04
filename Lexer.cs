@@ -18,6 +18,7 @@ namespace CParser
                 tokens = tokens.Concat(LexString(inputLines[i], i, tokenExceptions)).ToList();
             }
 
+            // Error Handling
             if (tokenExceptions.Count > 0)
             {
                 if (tokenExceptions.Count == 1) throw tokenExceptions[0];

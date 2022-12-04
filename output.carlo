@@ -1,0 +1,60 @@
+boolean fMust-(char aNgaln[15], int num)
+{
+	Printf("Hello world!! Si '%s' na ewan ito! Pang-%d \n ::) \r", aNgaln, &num);
+	if (num!=len(aNgaln))
+	{
+		return true;
+	}
+	else 
+	{
+		printf("\r\n Tsamba!! \n");
+		return false;
+	}
+	return;
+}
+
+// ============ Lexed (53) tokens ============
+// <BOOLEAN: boolean > <IDENTIFIER: fMust > <OPERATOR: - > <LPAR: ( > <CHAR: char > <IDENTIFIER: aNgaln > 
+// <LBRACK: [ > <INT_VAL: 15 > <RBRACK: ] > <COMMA: , > <INT: int > 
+// <IDENTIFIER: num > <RPAR: ) > <LBRACE: { > <IDENTIFIER: Printf > <LPAR: ( > 
+// <STRING_VAL: "Hello world!! Si '%s' na ewan ito! Pang-%d \n ::) \r" > <COMMA: , > <IDENTIFIER: aNgaln > <COMMA: , > <AMPERSAND: & > 
+// <IDENTIFIER: num > <RPAR: ) > <SEMICOLON: ; > <IF: if > <LPAR: ( > 
+// <IDENTIFIER: num > <NOT: ! > <EQUAL: = > <IDENTIFIER: len > <LPAR: ( > 
+// <IDENTIFIER: aNgaln > <RPAR: ) > <RPAR: ) > <LBRACE: { > <RETURN: return > 
+// <BOOLEAN_VAL: true > <SEMICOLON: ; > <RBRACE: } > <ELSE: else > <LBRACE: { > 
+// <IDENTIFIER: printf > <LPAR: ( > <STRING_VAL: "\r\n Tsamba!! \n" > <RPAR: ) > <SEMICOLON: ; > 
+// <RETURN: return > <BOOLEAN_VAL: false > <SEMICOLON: ; > <RBRACE: } > <RETURN: return > 
+// <SEMICOLON: ; > <RBRACE: } > 
+
+// ============ Keywords (10/53) tokens ============
+// boolean
+// char
+// int
+// if
+// return
+// true
+// else
+// return
+// false
+// return
+
+// ============ Symbols (30/53) tokens ============
+// -	(	[	]	,	)	{	(	,	,	
+// &	)	;	(	!	=	(	)	)	{	
+// ;	}	{	(	)	;	;	}	;	}	
+// 
+
+// ============ Values (13/53) tokens ============
+// fMust
+// aNgaln
+// 15
+// num
+// Printf
+// "Hello world!! Si '%s' na ewan ito! Pang-%d \n ::) \r"
+// aNgaln
+// num
+// num
+// len
+// aNgaln
+// printf
+// "\r\n Tsamba!! \n"

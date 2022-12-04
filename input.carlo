@@ -1,4 +1,4 @@
-boolean fMusta(char aNgaln[15], int num) {
+boolean fMust-(char aNgaln[15], int num) {
 Printf("Hello world!! Si '%s' na ewan ito! Pang-%d \n ::) \r",aNgaln, &num); 
 if (num!= len(aNgaln)) {return true;} else {printf("\r\n Tsamba!! \n"); return false;}
 return ;}

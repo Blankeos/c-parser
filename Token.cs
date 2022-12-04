@@ -32,7 +32,7 @@ namespace CParser
         IDENTIFIER, // iAmaVariable | I___Iam_A_VARIABLE
         STRING_VAL, // "Hello"
         CHAR_VAL,   // 'c'
-        INT_VAL, // 21
+        INT_VAL,    // 21
         FLOAT_VAL,  // 21.1f
         DOUBLE_VAL, // 21.1d
     }
@@ -52,6 +52,27 @@ namespace CParser
         {
             return $"<{this.tokenType}: {this.value} >";
         }
+    }
+
+    static class TokenConstants
+    {
+        public static readonly TokenType[] KEYWORDS = { TokenType.BOOLEAN, TokenType.INT, TokenType.STRING, TokenType.CHAR, TokenType.FLOAT, TokenType.DOUBLE, TokenType.IF, TokenType.ELSE, TokenType.RETURN, TokenType.BOOLEAN_VAL };
+
+        public static readonly TokenType[] SYMBOLS = {
+            TokenType.LBRACE, TokenType.RBRACE,
+            TokenType.LPAR, TokenType.RPAR,
+            TokenType.LBRACK, TokenType.RBRACK,
+            TokenType.EQUAL, TokenType.NOT,
+            TokenType.SEMICOLON, TokenType.COMMA,
+            TokenType.OPERATOR, TokenType.AMPERSAND,
+        };
+
+        public static readonly TokenType[] VALUES = {
+            TokenType.IDENTIFIER, TokenType.STRING_VAL,
+            TokenType.CHAR_VAL, TokenType.INT_VAL,
+            TokenType.FLOAT_VAL, TokenType.DOUBLE_VAL,
+        };
+
     }
 }
 

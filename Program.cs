@@ -12,6 +12,7 @@ namespace CParser
 
             // 1. Get Input From File
             const string FILE_PATH = "./input.carlo";
+            const string FILE_PATH_SAVE = "output.carlo";
             if (!File.Exists(FILE_PATH)) return;
             string[] lines = File.ReadAllLines(FILE_PATH);
 
@@ -20,7 +21,8 @@ namespace CParser
             // Console.WriteLine($"Lexed ({tokens.Count}) tokens");
 
             // 3. Parse Iteratively using 'Formatter'
-            Formatter.ParseToFile("output.carlo", tokens, true);
+            Formatter.ParseToFile(FILE_PATH_SAVE, tokens, true);
+            Console.WriteLine($"Read '{FILE_PATH}' and Output saved to '{FILE_PATH_SAVE}'");
 
             // 4. Create AST with 'Parser'
             Parser.Parse(tokens);

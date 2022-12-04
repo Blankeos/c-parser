@@ -1,5 +1,7 @@
 # 🤓 The "Carlo" Parser in C#
 
+![preview gif](/docs/preview.gif)
+
 A programming language parser implemented in C# as a final requirement for my CCS 238 Programming Languages class for **Dr. Felipe P. Vista IV**.
 
 This program parses an "almost C/C++"-like programming language called `Carlo`.
@@ -15,6 +17,7 @@ Written by:
 - 🤓 Carlo Antonio T. Taleon
 - 👧 Glecy S. Elizalde
 - 🤠 Christopher Joseph T. Rubinos
+- 💻 Jesmar Tolato
 ```
 
 ## Get started

@@ -1,17 +1,15 @@
-dotnet publish --output "{any directory}" --runtime {runtime}
-  --configuration {Debug|Release} -p:PublishSingleFile={true|false}
-  -p:PublishTrimmed={true|false} --self-contained {true|false}
-
-
-
-# Publish to relative 
-dotnet publish --output '' --runtime win-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true--self-contained true
-
-
-dotnet publish -c Debug -r win10-x64
-
 # Run .exe
 ./bin/Debug/net6.0/CParser.exe
 
 # Run .dll
 dotnet run ./bin/Debug/net6.0/CParser.dll
+
+### No need to use these commands below ###
+
+# Publish command template
+dotnet publish --output "{any directory}" --runtime {runtime}
+  --configuration {Debug|Release} -p:PublishSingleFile={true|false}
+  -p:PublishTrimmed={true|false} --self-contained {true|false}
+
+# Publish as .exe
+dotnet publish -c Debug -r win10-x64

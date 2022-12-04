@@ -28,7 +28,7 @@ namespace CParser
                     switch (peekedToken.tokenType)
                     {
                         case TokenType.LPAR:
-                            Console.WriteLine(Parse_FuncDec(ts, dataType, identifier));
+                            Parse_FuncDec(ts, dataType, identifier);
                             break;
                         case TokenType.EQUAL:
                             Parse_FuncDec(ts, dataType, identifier);

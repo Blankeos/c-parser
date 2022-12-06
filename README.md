@@ -20,15 +20,7 @@ Written by:
 - 💻 Jesmar Tolato
 ```
 
-## Quickstart
-
-Assuming you're on windows. You can run the `CParser.exe` like so:
-
-```
-./CParser.exe
-```
-
-## Detailed Start Guide
+## Get Started
 
 > Make sure to install [.Net SDK](https://dotnet.microsoft.com/en-us/download) if you haven't yet
 

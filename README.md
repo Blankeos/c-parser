@@ -20,7 +20,15 @@ Written by:
 - 💻 Jesmar Tolato
 ```
 
-## Get started
+## Quickstart
+
+Assuming you're on windows. You can run the `CParser.exe` like so:
+
+```
+./CParser.exe
+```
+
+## Detailed Start Guide
 
 > Make sure to install [.Net SDK](https://dotnet.microsoft.com/en-us/download) if you haven't yet
 
@@ -42,14 +50,15 @@ cd cs-parser
 dotnet run
 ```
 
-4. _Optional_: Faster Execution by building to and running `.dll`
+4. _Optional_: Build to `.dll` or `.exe` and run either
 
 ```sh
-dotnet build
-dotnet ./bin/Debug/net6.0/CParser.dll
+dotnet build # this command is already ran when you `dotnet run`
+dotnet ./bin/Debug/net6.0/CParser.dll # opens .dll
+./bin/Debug/net6.0/CParser.exe
 ```
 
-4. Open `output.carlo` to check the **output**!
+5. Open `output.carlo` to check the **output**!
 
 ## Introducing: The 🤓 "Carlo" Programming Language
 
